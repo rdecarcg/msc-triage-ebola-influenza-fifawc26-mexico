@@ -1,0 +1,11 @@
+# R y RStudio exclusions:
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+.DS_Store
+
+# renv exclusions:
+renv/library/
+renv/staging/
+renv/local/
