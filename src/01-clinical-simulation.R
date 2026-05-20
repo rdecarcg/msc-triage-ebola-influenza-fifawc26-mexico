@@ -1,14 +1,14 @@
 # =========================================================================
 # SCRIPT 01: PARAMETRIC MONTECARLO SIMULATION FOR CLINICAL TRIAGE COHORTS
 # PROJECT: EPIDEMIOLOGICAL TRIAGE FIFA WORLD CUP 2026 - MEXICO
-# PATHOGENS: EBOLA BUNDIBUGYO VS SEVERE SEASONAL INFLUENZA (N = 250, ALPHA = 0.01)
+# PATHOGENS: EBOLA BUNDIBUGYO VS INFLUENZA H5N1 (N = 250, ALPHA = 0.01)
 # =========================================================================
 
 set.seed(20260520) # Scientific reproducibility seed (20.05.2026).
 n <- 250
 
 # 1. Target Variable: Pathogen (balanced design for logistic regression efficiency).
-pathogen <- c(rep('Severe_Influenza', 125), rep('Ebola_Bundibugyo', 125))
+pathogen <- c(rep('Influenza_H5N1', 125), rep('Ebola_Bundibugyo', 125))
 
 # 2. Demographics: Age (normal distribution bounded between 16 and 80).
 age <- round(rnorm(n, mean = 38, sd = 12))
@@ -53,7 +53,7 @@ household_sar <- c(round(rnorm(125, mean = 42, sd = 10)), round(rnorm(125, mean 
 household_sar <- pmax(pmin(household_sar, 100), 0)
 
 # 11. Final Patient Outcome (0 = Recovered/Discharged, 1 = Deceased).
-# Case Fatality Rate (CFR): Severe Influenza ~2-5%; Ebola Bundibugyo ~40% (WHO parameter).
+# Case Fatality Rate (CFR): Influenza H5N1 ~2-5%; Ebola Bundibugyo ~40% (WHO parameter).
 clinical_outcome <- c(sample(c(0, 1), 125, replace = TRUE, prob = c(0.96, 0.04)),
                       sample(c(0, 1), 125, replace = TRUE, prob = c(0.60, 0.40)))
 
