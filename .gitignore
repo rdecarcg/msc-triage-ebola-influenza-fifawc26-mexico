@@ -4,6 +4,7 @@
 .Ruserdata
 .Rproj.user/
 .DS_Store
+.positai
 
 # renv exclusions:
 renv/library/
