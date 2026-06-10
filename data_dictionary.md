@@ -14,9 +14,10 @@
 | :--- | :--- | :--- | :--- |
 | `infection_date` | Date | Initial exposure/infection event mapping. | `2026-05-27` to `2026-08-25` |
 | `triage_arrival_date` | Date | Clinical presentation date (infection date + incubation). | Calculated Date |
-| `incubation_days` | Integer | Pathogen latency period. *Note: Includes ±3 days stochastic recall bias in this operational dataset.* | `1` to `~25` (Right-skewed) |
+| `incubation_days` | Integer | Pathogen latency period.<br> *Note: Includes ±3 days stochastic recall bias in this operational dataset.* | `1` to `~25` (Right-skewed) |
 | `silent_detection_phase` | Binary | Flag indicating early-phase infection prior to systemic epidemiological alert (June 10, 2026). | `0` (No), `1` (Yes) |
 | `presymptomatic_shedding` | Binary | Identifies infectiousness prior to clinical symptom onset. | `0` (No), `1` (Yes) |
+| `arrival_day` | Integer | Re-mapped arrival day for the discrete-time hospital simulation, compressed into a 60-day acute surge via Beta distribution. | `1` to `60` |
 
 ## 3. Demographics & Behavioral Profiling
 | Variable Name | Data Type | Description | Values / Range |
