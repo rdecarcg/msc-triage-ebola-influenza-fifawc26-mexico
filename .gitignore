@@ -1,12 +1,22 @@
-# R y RStudio exclusions:
-.Rhistory
+# R History and Workspace
 .RData
 .Ruserdata
-.Rproj.user/
-.DS_Store
-.positai
+.Rhistory
+.Rapp.history
 
-# renv exclusions:
+# Renv (Ignorar binarios, pero mantener renv.lock y activate.R)
 renv/library/
-renv/staging/
 renv/local/
+renv/staging/
+renv/python/
+.Rprofile.backup
+
+# OS generated files (macOS)
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Shiny & Knitr
+rsconnect/
+*.html
+*.pdf
