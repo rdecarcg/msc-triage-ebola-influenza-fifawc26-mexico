@@ -6,14 +6,20 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0007--1851--9547-green.svg)](https://orcid.org/0009-0007-1851-9547)
 
-<p align="left">
-  <img align="left" src="assets/GH_FBlack.svg#gh-light-mode-only" alt="Rodrigo De Carcer Signature" width="70" style="margin-right: 10px;">
-  <img align="left" src="assets/GH_FWhite.svg#gh-dark-mode-only" alt="Rodrigo De Carcer Signature" width="70" style="margin-right: 10px;">
-  <b>Author:</b> Rodrigo Abel De Cárcer Gandarilla<br>
-  <b>Date:</b> June 2026<br>
-  <b>Concept:</b> Executive Decision Support System & Policy Simulator<br>
-  <b>Preprint:</b> <i>medRxiv (Integration Pending)</i>
-</p>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td valign="top" width="80" style="border: none;">
+      <img src="assets/GH_FBlack.svg#gh-light-mode-only" alt="Rodrigo De Carcer Signature" width="65" style="max-width: none;">
+      <img src="assets/GH_FWhite.svg#gh-dark-mode-only" alt="Rodrigo De Carcer Signature" width="65" style="max-width: none;">
+    </td>
+    <td valign="top" style="border: none; padding-left: 15px;">
+      <b>Author:</b> Rodrigo Abel De Cárcer Gandarilla<br>
+      <b>Date:</b> June 2026<br>
+      <b>Concept:</b> Executive Decision Support System & Policy Simulator<br>
+      <b>Preprint:</b> <i>medRxiv (Integration Pending)</i>
+    </td>
+  </tr>
+</table>
 <br clear="left"/>
 
 ---
