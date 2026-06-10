@@ -113,8 +113,12 @@ ui <- dashboardPage(
   skin = 'black',
   
   dashboardHeader(
-    title = 'EpiTriage 2026: Mexico', 
-    titleWidth = 300,
+    title = tags$span(
+      style = "display: flex; align-items: center; margin-left: -2px;",
+      tags$img(src = 'GH_FBlack.svg', height = '35px', style = "margin-right: 10px; margin-bottom: 2px;"),
+      "EpiTriage 2026: Mexico"
+    ),
+    titleWidth = 330,
     tags$li(class = 'dropdown', tags$a(href = 'https://github.com/rdecarcg/msc-triage-ebola-influenza-fifawc26-mexico', icon('github'), ' GitHub', target = '_blank', style = 'color: #333 !important; font-weight: bold;')),
     tags$li(class = 'dropdown', tags$a(href = 'https://doi.org/10.5281/zenodo.20600419', icon('database'), ' Zenodo: 10.5281/zenodo.20600419', target = '_blank', style = 'color: #333 !important; font-weight: bold;')),
     tags$li(class = 'dropdown', tags$a(href = 'https://medrxiv.org', icon('file-medical'), ' medRxiv', target = '_blank', style = 'color: #333 !important; font-weight: bold;')),

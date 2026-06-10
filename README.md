@@ -4,11 +4,17 @@
 [![Platform](https://img.shields.io/badge/r-%23276DC3.svg?style=flat&logo=r&logoColor=white)](https://www.r-project.org/)
 [![Shiny](https://img.shields.io/badge/shiny-%2317a2b8.svg?style=flat)](https://shiny.posit.co/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0007--1851--9547-green.svg)](https://orcid.org/0009-0007-1851-9547)
+
+<img align="left" src="assets/GH_FBlack.svg#gh-light-mode-only" alt="Rodrigo De Carcer Signature" width="65" style="margin-right: 15px;">
+<img align="left" src="assets/GH_FWhite.svg#gh-dark-mode-only" alt="Rodrigo De Carcer Signature" width="65" style="margin-right: 15px;">
 
 **Author:** Rodrigo Abel De Cárcer Gandarilla  
 **Date:** June 2026  
 **Concept:** Executive Decision Support System & Policy Simulator  
 **Preprint:** *medRxiv (Integration Pending)*
+
+<br clear="left"/>
 
 ---
 
