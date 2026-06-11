@@ -6,13 +6,16 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0007--1851--9547-green.svg)](https://orcid.org/0009-0007-1851-9547)
 
-<table border="0" cellpadding="0" cellspacing="0">
+<table border="0" cellpadding="0" cellspacing="0" style="border: none;">
   <tr>
-    <td valign="top" width="80" style="border: none;">
-      <img src="assets/GH_FBlack.svg#gh-light-mode-only" alt="Rodrigo De Carcer Signature" width="65" style="max-width: none;">
-      <img src="assets/GH_FWhite.svg#gh-dark-mode-only" alt="Rodrigo De Carcer Signature" width="65" style="max-width: none;">
+    <td valign="middle" width="80" style="border: none;">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/GH_FWhite.svg">
+        <source media="(prefers-color-scheme: light)" srcset="assets/GH_FBlack.svg">
+        <img alt="Rodrigo De Carcer Signature" src="assets/GH_FBlack.svg" width="65" style="max-width: none;">
+      </picture>
     </td>
-    <td valign="top" style="border: none; padding-left: 15px;">
+    <td valign="top" style="border: none; padding-left: 10px;">
       <b>Author:</b> Rodrigo Abel De Cárcer Gandarilla<br>
       <b>Date:</b> June 2026<br>
       <b>Concept:</b> Executive Decision Support System & Policy Simulator<br>
