@@ -4,7 +4,7 @@
 .Rhistory
 .Rapp.history
 
-# Renv (Ignorar binarios, pero mantener renv.lock y activate.R)
+# Renv (Ignore binaries, but keep renv.lock and activate.R)
 renv/library/
 renv/local/
 renv/staging/
@@ -20,3 +20,5 @@ renv/python/
 rsconnect/
 *.html
 *.pdf
+.Rproj.user
+.positai

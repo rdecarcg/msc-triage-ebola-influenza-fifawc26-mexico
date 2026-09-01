@@ -1,4 +1,4 @@
-# EpiTriage 2026: Epidemiological Triage & Macroeconomic Impact Simulation Pipeline
+# A Machine Learning Framework for Crisis Standards of Care: Stochastic Modelling of Pathogen Incursion and Triage Optimization
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20600419.svg)](https://doi.org/10.5281/zenodo.20600419)
 [![Platform](https://img.shields.io/badge/r-%23276DC3.svg?style=flat&logo=r&logoColor=white)](https://www.r-project.org/)
@@ -18,20 +18,25 @@
     <td valign="top" style="border: none; padding-left: 10px;">
       <b>Author:</b> Rodrigo Abel De Cárcer Gandarilla<br>
       <b>Date:</b> June 2026<br>
-      <b>Concept:</b> Executive Decision Support System & Policy Simulator<br>
+      <b>Concept:</b> Generalizable Mass-Gathering Triage Framework & Policy Simulator<br>
       <b>Preprint:</b> <i>medRxiv (Integration Pending)</i>
     </td>
   </tr>
 </table>
 <br clear="left"/>
 
+🚨 **Interactive Policy Simulator:** Access the live Executive Decision Support System directly via your browser: **[Launch Web Dashboard](https://rdecarcg.github.io/msc-triage-ebola-influenza-fifawc26-mexico/)**
+
 ---
 
 ## Project Overview
 
-The 2026 FIFA World Cup in Mexico represents an unprecedented mass-gathering event, introducing severe spatial-temporal mobility dynamics and substantial biosecurity challenges. This repository hosts a comprehensive, end-to-end computational pipeline designed to evaluate the healthcare system and macroeconomic risks of a hypothetical 'Black Swan' event: a simultaneous multi-pathogen incursion of **Ebola Bundibugyo (BDBV)**—modeled during an active WHO Public Health Emergency of International Concern (PHEIC)—and pandemic **Influenza H5N1** during a Southern Hemisphere winter surge vector.
+This repository hosts a generalizable, end-to-end computational pipeline designed to evaluate the healthcare system and macroeconomic risks of a hypothetical 'Black Swan' event. Utilizing the 2026 FIFA World Cup in Mexico as a primary mass-gathering case study, the framework simulates a simultaneous multi-pathogen incursion of **Ebola Bundibugyo (BDBV)**—modeled during an active WHO Public Health Emergency of International Concern (PHEIC)—and pandemic **Influenza H5N1** during a Southern Hemisphere winter surge vector.
 
 Utilizing a 5-stage methodological framework, the pipeline establishes a Pathogen Incursion Probability Engine via a Poisson arrival process, synthesizes operational clinical cohorts, trains an ensemble machine learning meta-learner optimized for asymmetric misclassification costs, models discrete-time hospital capacity saturation under Crisis Standards of Care (CSC), and projects long-term societal and macroeconomic health deficits using Global Burden of Disease (GBD) and WHO-CHOICE parameters.
+
+### Generalizability & Adaptability
+While parameterised herein for H5N1 and BDBV dynamics, the core contribution of this pipeline is its modularity. The deterministic and stochastic engines are entirely pathogen-agnostic. In the event of a novel "Disease X" emergence or any future global Mass-Gathering Event facing an active PHEIC, epidemiologists can rapidly redeploy this framework by updating the parameter matrices (`config.R`) with new latency distributions and biomarker covariances. The ensemble meta-learner will autonomously re-train and establish optimal decision boundaries within minutes.
 
 ---
 
@@ -44,6 +49,8 @@ The project is organized as a modular, self-contained R project:
 ├── renv.lock                                         # Reproducible Environment Lockfile
 ├── data_dictionary.md                                # Detailed Feature Metadata
 ├── README.md                                         # Project Master Documentation
+├── assets/                             # Repository Badges & Static Image Assets
+├── docs/                               # Pre-compiled Manuscript PDF & Supp. Materials
 ├── data/
 │   ├── dataset_ebola_vs_influenza_fifawc26_triage_mexico.csv # Ground-Truth Cohort
 │   └── dataset_operational_triage.csv                        # Operational Dataset (With Noise)
@@ -88,7 +95,15 @@ Translates hospital overflow thresholds into community transmission matrices thr
 
 ## Interactive Shiny Dashboard (`epitriage-dashboard/app.R`)
 
-The clinical and economic outputs are compiled into a production-grade Executive Decision Support System dashboard built with `shinydashboard`. The architecture comprises six specialized analytical views:
+The deterministic and stochastic outputs have been encapsulated into a production-grade interactive dashboard. To bridge the gap between computational modelling and actionable public health policy, this dashboard allows policymakers to:
+* Perform real-time multivariable sensitivity analyses.
+* Manipulate epidemiological reproduction numbers ($R_t$).
+* Dynamically adjust hospital capacity constraints (AIIR beds).
+* Instantly evaluate the resulting WHO-CHOICE macroeconomic burden projections.
+
+Access the live application without requiring a local R environment: **[EpiTriage 2026 Dashboard](https://rdecarcg.github.io/msc-triage-ebola-influenza-fifawc26-mexico/)**
+
+The architecture comprises six specialized analytical views:
 
 1. **Executive Summary:** Real-time KPI tracking showcasing Poisson arrival risks, maximum lives saved, and absolute economic burden averted. 
 2. **Interactive Policy Simulator:** Active user sliders enabling real-time scenario modelling by manipulating susceptible demographic sizes, effective reproduction numbers (Rt), systemic collapse mortality metrics, and infrastructure capacity caps.
@@ -99,12 +114,22 @@ The clinical and economic outputs are compiled into a production-grade Executive
 
 ---
 
+## Conclusions & Limitations
+
+**Key Findings:** The computational pipeline demonstrates that waiting for definitive syndromic clustering during an MGE is a mathematically catastrophic policy. By integrating a Stacked Generalization meta-learner optimized through an asymmetric $F_{\beta=2}$ cost function, the algorithm prioritizes clinical sensitivity over precision. Explicitly tolerating managed false positives to guarantee zero false negatives is the only viable strategy to protect healthcare elasticity under CSC. Implementing algorithmic triage averts systemic collapse and effectively prevents multi-trillion dollar ($> \$3.97$ trillion USD) economic paralysis.
+
+**Limitations:** The model is constrained by its reliance on a synthetic operational sample frame. While tightly calibrated to historical WHO reference parameters, the haematological covariance matrices abstract the complete complexity of real-world multi-morbidity profiles. Furthermore, the algorithm's discriminative power relies on the existence of physiological or chronological divergence between concurrent pathogens.
+
+---
+
 ## Installation & Reproducibility
 
 This project utilizes the `renv` package management system to guarantee local environment and package version lock-in consistency across systems.
 
 ### Hardware Prerequisites & Performance Metrics
 The script stack utilizes parallel processing (`doParallel`) to accelerate hyperparameter grid sweeps. Performance metrics and cross-validation loops have been natively compiled and optimized locally on Apple Silicon architecture hardware running macOS, ensuring exceptionally fast computation times during the ensemble compilation and simulation phases.
+
+While the dashboard is available via web deployment, the full pipeline can be reproduced locally. 
 
 ### Execution Steps
 1. Clone the repository to your local directory.
@@ -117,7 +142,7 @@ The script stack utilizes parallel processing (`doParallel`) to accelerate hyper
    ```r
    source('src/00-pipeline-orchestrator.R')
    ```
-5. To launch the Executive Dashboard application, run:
+5. To launch the Executive Dashboard application locally, run:
    ```r
    shiny::runApp('epitriage-dashboard')
    ```
